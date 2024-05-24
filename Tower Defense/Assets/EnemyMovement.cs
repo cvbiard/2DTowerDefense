@@ -30,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
         //If we have reached the current target (within a margin), advance the index to the next target
         if (Vector2.Distance(target.position, transform.position) <= 0.1f)
         {
+            transform.position = target.position;
             pathIndex++;
 
 

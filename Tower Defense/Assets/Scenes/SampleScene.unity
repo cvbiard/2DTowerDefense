@@ -12422,6 +12422,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7765810915983326472, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
       propertyPath: m_Name
       value: Enemy
