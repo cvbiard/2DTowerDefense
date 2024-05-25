@@ -17,8 +17,11 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private int pathIndex = 0;
 
+    private float baseSpeed;
+
     private void Start()
     {
+        baseSpeed = moveSpeed;
         //On start make sure our target point is the first point in the array
         target = LevelManager.main.path[pathIndex];
 
@@ -57,4 +60,13 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
+    public void UpdateSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    public void ResetSpeed()
+    {
+        moveSpeed = baseSpeed;
+    }
 }

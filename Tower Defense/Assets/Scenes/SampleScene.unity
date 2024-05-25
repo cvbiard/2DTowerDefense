@@ -669,7 +669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Test Turret
+  m_text: 'Slowmo Turret
 
 '
   m_isRightToLeft: 0
@@ -4848,9 +4848,9 @@ MonoBehaviour:
   - name: Basic Turret
     cost: 100
     prefab: {fileID: 7252256592444686723, guid: 82b345d75b4948b46b4719548c17f061, type: 3}
-  - name: Test Turret
-    cost: 150
-    prefab: {fileID: 7252256592444686723, guid: 46518f8ad4e52a942afd5625f578efad, type: 3}
+  - name: Slowmo Turret
+    cost: 200
+    prefab: {fileID: 241573884087285109, guid: dacc15856f661a541b18a4ca51c1c087, type: 3}
 --- !u!4 &781734234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1453660695235123475, guid: f65a9c6ce0f43a14688abd6fb7dc92c7, type: 3}
@@ -12313,7 +12313,7 @@ GameObject:
   - component: {fileID: 1655396524}
   - component: {fileID: 1655396523}
   m_Layer: 5
-  m_Name: Test Turret
+  m_Name: Slowmo Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
