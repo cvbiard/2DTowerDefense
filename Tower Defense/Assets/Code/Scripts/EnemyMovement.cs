@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     {
 
         //If we have reached the current target (within a margin), advance the index to the next target
-        if (Vector2.Distance(target.position, transform.position) <= 0.1f)
+        if (Vector2.Distance(target.position, transform.position) <= 0.05f)
         {
             transform.position = target.position;
             pathIndex++;
@@ -38,6 +38,7 @@ public class EnemyMovement : MonoBehaviour
             //If we have reached the end of the path, destroy self
             if (pathIndex == LevelManager.main.path.Length)
             {
+                EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
                 return;
             }
