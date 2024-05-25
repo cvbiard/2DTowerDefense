@@ -106,8 +106,8 @@ SpriteRenderer:
   m_SortingLayerID: -749153293
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1062295055, guid: 1ff07e33856eb8c478597370d0ca0ac3, type: 3}
-  m_Color: {r: 0.5447367, g: 0.2170523, b: 0.6320754, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8fe57e80d61b53f44a9ce2725092c08a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 7064051087215372565}
   - component: {fileID: 35799251431442910}
   m_Layer: 0
-  m_Name: Test Turret
+  m_Name: God Mode Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,11 +167,11 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 4052756315766986583, guid: a7fb1c30f66a4c74a9ae05594e00e3ed, type: 3}
+  bulletPrefab: {fileID: 4052756315766986583, guid: 9ca42f361d8d2de4c8eb5c65e206debe, type: 3}
   firingPoint: {fileID: 4028571330282170126}
-  targetingRange: 10
+  targetingRange: 1000
   rotationSpeed: 200
-  bps: 0.5
+  bps: 20
 --- !u!1 &8478053968799498889
 GameObject:
   m_ObjectHideFlags: 0
