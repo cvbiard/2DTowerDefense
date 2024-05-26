@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private UIManager UIManagerComponent;
 
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
@@ -35,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartWave());
+        UIManagerComponent.UpdateWave(currentWave);
     }
 
     private void EnemyDestroyed()
@@ -103,6 +105,7 @@ public class EnemySpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
+        UIManagerComponent.UpdateWave(currentWave);
         StartCoroutine(StartWave());
     }
 }
