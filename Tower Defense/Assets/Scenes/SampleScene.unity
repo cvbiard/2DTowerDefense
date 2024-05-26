@@ -3758,7 +3758,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000f3d358d3
+  m_ApplyToSortingLayers: 00000000f3d358d33dfbb009
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -4767,6 +4767,7 @@ GameObject:
   - component: {fileID: 780337617}
   - component: {fileID: 780337619}
   - component: {fileID: 780337620}
+  - component: {fileID: 780337621}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -4858,6 +4859,18 @@ MonoBehaviour:
   - name: God Mode Turret
     cost: 0
     prefab: {fileID: 7252256592444686723, guid: 46518f8ad4e52a942afd5625f578efad, type: 3}
+--- !u!114 &780337621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 780337616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99bc4b3eef5d4d84bb2d1680a022d315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &781734234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1453660695235123475, guid: f65a9c6ce0f43a14688abd6fb7dc92c7, type: 3}
