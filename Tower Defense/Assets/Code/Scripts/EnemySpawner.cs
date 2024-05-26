@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
+//using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -38,6 +39,12 @@ public class EnemySpawner : MonoBehaviour
 
     private void EnemyDestroyed()
     {
+        if(Castle.main.GetHealth() <= 0)
+        {
+            //Game Over
+            Debug.Log("Game Over");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
         enemiesAlive--;
     }
   

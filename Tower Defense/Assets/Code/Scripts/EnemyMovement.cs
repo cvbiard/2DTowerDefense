@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private int baseDamage = 2;
 
     //The point we want to move to
     private Transform target;
@@ -41,6 +42,8 @@ public class EnemyMovement : MonoBehaviour
             //If we have reached the end of the path, destroy self
             if (pathIndex == LevelManager.main.path.Length)
             {
+                Castle.main.TakeDamage(baseDamage);
+                Debug.Log("Castle Health: " + Castle.main.GetHealth());
                 EnemySpawner.onEnemyDestroy.Invoke();
                 Destroy(gameObject);
                 return;
