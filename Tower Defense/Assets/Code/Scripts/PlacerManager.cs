@@ -7,9 +7,14 @@ public class PlacerManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private GameObject towerPrefab;
+    [SerializeField] private GameObject towerPlaceRadius;
+    [SerializeField] private LayerMask turretMask;
+    [SerializeField] private Color canPlace;
+    [SerializeField] private Color cannotPlace;
 
     private Vector2 mousePosition;
-    public float moveSpeed = 0.1f;
+
+    private Transform target;
 
     private GameObject towerObject;
     public Turret turret;
@@ -17,7 +22,8 @@ public class PlacerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sr.sprite = towerPrefab.GetComponent<Turret>().GetSprite().sprite;
+        sr.sprite = towerPrefab.GetComponent<TowerCore>().GetSprite();
+        towerPlaceRadius.transform.localScale = new Vector2 (towerPrefab.GetComponent<TowerCore>().GetPlacingRange(), towerPrefab.GetComponent<TowerCore>().GetPlacingRange());
     }
 
     // Update is called once per frame
@@ -28,6 +34,13 @@ public class PlacerManager : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             transform.position = mousePosition;
 
+       
+        if(FindOtherTurrets() == false)
+        {
+            return;
+        }
+
+        
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -50,8 +63,20 @@ public class PlacerManager : MonoBehaviour
 
     }
 
-    private void OnMouseDown()
+    private bool FindOtherTurrets()
     {
-       
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, towerPrefab.GetComponent<TowerCore>().GetPlacingRange()/2, (Vector2)transform.position, 0f, turretMask);
+
+        if (hits.Length > 0)
+        {
+            Debug.Log("overlapping anoter turret");
+            towerPlaceRadius.GetComponent<SpriteRenderer>().color = cannotPlace;
+            return false;
+        }
+        else
+        {
+            towerPlaceRadius.GetComponent<SpriteRenderer>().color = canPlace;
+            return true;
+        }
     }
 }

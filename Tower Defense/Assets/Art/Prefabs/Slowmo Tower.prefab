@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4642168370019896500}
   - component: {fileID: 258998328542459448}
   - component: {fileID: 2179640906744634146}
+  - component: {fileID: 6956186705907472831}
   m_Layer: 0
   m_Name: Slowmo Tower
   m_TagString: Untagged
@@ -103,3 +104,17 @@ MonoBehaviour:
   targetingRange: 2
   aps: 0.25
   freezeTime: 1
+--- !u!114 &6956186705907472831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241573884087285109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a972845ad849264bb06fce7a59fa4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  srenderer: {fileID: 258998328542459448}
+  placingRange: 3

@@ -24,6 +24,11 @@ public class BuildManager : MonoBehaviour
     public void SetSelectedTower(int _selectedTower)
     {
         selectedTower = _selectedTower;
+        if (towers[selectedTower].cost > LevelManager.main.currency)
+        {
+            Debug.Log("You can't afford this tower");
+            return;
+        }
         Instantiate(towers[selectedTower].placer, transform.position, Quaternion.identity);
     }
 }

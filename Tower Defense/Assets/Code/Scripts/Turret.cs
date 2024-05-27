@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     [SerializeField] private Transform firingPoint;
     [SerializeField] private GameObject upgradeUI;
     [SerializeField] private Button upgradeButton;
-    [SerializeField] private SpriteRenderer sr;
+
 
 
     [Header("Attribute")]
@@ -152,8 +152,5 @@ public class Turret : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
         turretRotationPoint.rotation = Quaternion.RotateTowards(turretRotationPoint.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
-    public SpriteRenderer GetSprite()
-    {
-        return sr;
-    }
+
 }
