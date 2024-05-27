@@ -45,9 +45,9 @@ public class Plot : MonoBehaviour
             return;
         }
 
-        LevelManager.main.SpendCurrency(towerToBuild.cost);
+       // LevelManager.main.SpendCurrency(towerToBuild.cost);
 
-        towerObject = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
-        turret = towerObject.GetComponent<Turret>();
+       // towerObject = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
+       // turret = towerObject.GetComponent<Turret>();
     }
 }

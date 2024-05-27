@@ -546,6 +546,7 @@ MonoBehaviour:
   firingPoint: {fileID: 4028571330282170126}
   upgradeUI: {fileID: 4459715100213811326}
   upgradeButton: {fileID: 3774943898708601619}
+  sr: {fileID: 6194795822401202279}
   targetingRange: 3
   rotationSpeed: 200
   bps: 1
