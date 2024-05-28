@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36187818079642275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RotatePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3179916161142462918}
   - component: {fileID: 6194795822401202279}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -749153293
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8fe57e80d61b53f44a9ce2725092c08a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,7 +127,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7064051087215372565}
   - component: {fileID: 35799251431442910}
-  m_Layer: 0
+  - component: {fileID: -7322528798996200342}
+  - component: {fileID: 2306429296814186945}
+  m_Layer: 8
   m_Name: God Mode Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,9 +171,61 @@ MonoBehaviour:
     m_Bits: 64
   bulletPrefab: {fileID: 4052756315766986583, guid: 9ca42f361d8d2de4c8eb5c65e206debe, type: 3}
   firingPoint: {fileID: 4028571330282170126}
+  upgradeUI: {fileID: 0}
+  upgradeButton: {fileID: 0}
   targetingRange: 1000
   rotationSpeed: 200
   bps: 20
+  baseUpgradeCost: 100
+--- !u!114 &-7322528798996200342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252256592444686723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a972845ad849264bb06fce7a59fa4e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  srenderer: {fileID: 6194795822401202279}
+  placingRange: 3
+--- !u!58 &2306429296814186945
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252256592444686723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8478053968799498889
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5056846384960606810}
   - component: {fileID: 3306291816003926057}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +297,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -749153293
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: -1766410829, guid: 1ff07e33856eb8c478597370d0ca0ac3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -265,7 +319,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4028571330282170126}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

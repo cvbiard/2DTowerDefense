@@ -42,7 +42,7 @@ public class Turret : MonoBehaviour
         bpsBase = bps;
         targetingRangeBase = targetingRange;
 
-        upgradeButton.onClick.AddListener(Upgrade);
+        //upgradeButton.onClick.AddListener(Upgrade);
     }
 
     // Update is called once per frame

@@ -1161,7 +1161,7 @@ MonoBehaviour:
   - name: God Mode Turret
     cost: 0
     prefab: {fileID: 7252256592444686723, guid: 46518f8ad4e52a942afd5625f578efad, type: 3}
-    placer: {fileID: 0}
+    placer: {fileID: 5800251503034198901, guid: 34654420c981e194db20e7da266b8b76, type: 3}
 --- !u!114 &780337621
 MonoBehaviour:
   m_ObjectHideFlags: 0
