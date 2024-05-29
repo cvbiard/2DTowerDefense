@@ -106,7 +106,7 @@ SpriteRenderer:
   m_SortingLayerID: -749153293
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8fe57e80d61b53f44a9ce2725092c08a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64930791c2e13024bb647ba7e0ac1013, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,13 +169,13 @@ MonoBehaviour:
   enemyMask:
     serializedVersion: 2
     m_Bits: 64
-  bulletPrefab: {fileID: 4052756315766986583, guid: 9ca42f361d8d2de4c8eb5c65e206debe, type: 3}
+  bulletPrefab: {fileID: 4052756315766986583, guid: a7fb1c30f66a4c74a9ae05594e00e3ed, type: 3}
   firingPoint: {fileID: 4028571330282170126}
   upgradeUI: {fileID: 0}
   upgradeButton: {fileID: 0}
-  targetingRange: 1000
+  targetingRange: 9
   rotationSpeed: 200
-  bps: 20
+  bps: 5
   baseUpgradeCost: 100
 --- !u!114 &-7322528798996200342
 MonoBehaviour:
@@ -299,7 +299,7 @@ SpriteRenderer:
   m_SortingLayerID: -749153293
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1766410829, guid: 1ff07e33856eb8c478597370d0ca0ac3, type: 3}
+  m_Sprite: {fileID: -173380588, guid: d32cb23963f896740ba1b8eae027a02a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
