@@ -7,14 +7,21 @@ public class TurretSlowmo : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private GameObject freezeVisualBase;
 
     [Header("Attribute")]
     [SerializeField] private float targetingRange = 5f;
     [SerializeField] private float aps = 4f; //attacks Per Second
     [SerializeField] private float freezeTime = 1f;
+    [SerializeField] private Color freezeVisualColor;
 
     private float timeUntilFire;
 
+    private void Start()
+    {
+        
+        freezeVisualBase.SetActive(false);
+    }
     private void Update()
     {
 
@@ -43,6 +50,7 @@ public class TurretSlowmo : MonoBehaviour
                 em.UpdateSpeed(0.25f);
 
                 StartCoroutine(ResetEnemySpeed(em));
+                freezeVisualBase.SetActive(true);
             }
         }
 
@@ -53,6 +61,7 @@ public class TurretSlowmo : MonoBehaviour
         yield return new WaitForSeconds(freezeTime);
 
         em.ResetSpeed();
+        freezeVisualBase.SetActive(false);
     }
 
     private void OnDrawGizmosSelected()
