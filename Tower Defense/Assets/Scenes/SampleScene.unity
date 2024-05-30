@@ -1475,7 +1475,7 @@ MonoBehaviour:
     prefab: {fileID: 241573884087285109, guid: dacc15856f661a541b18a4ca51c1c087, type: 3}
     placer: {fileID: 5800251503034198901, guid: c5272cff19c72e84ea624ba1e4b4a594, type: 3}
   - name: Golden Beetle
-    cost: 1000
+    cost: 0
     prefab: {fileID: 241573884087285109, guid: d39bbb7abd78cd745b6875a5f435c23e, type: 3}
     placer: {fileID: 5800251503034198901, guid: 702943e9664f0d14ba5dc9fce3eb7a74, type: 3}
   - name: Super Ant

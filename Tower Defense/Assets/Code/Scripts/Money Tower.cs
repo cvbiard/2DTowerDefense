@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class MoneyTower : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] Animator anim;
 
     [Header("Attribute")]
     [SerializeField] private int basePayout = 200;
@@ -27,6 +28,8 @@ public class MoneyTower : MonoBehaviour
     }
     private void GiveMoney(int amount)
     {
+        anim.enabled = true;
+        anim.Play("dollarAnim", -1, 0f);
         LevelManager.main.IncreaseCurrency(amount);
     }
 }
