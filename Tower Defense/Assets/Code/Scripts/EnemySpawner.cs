@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
@@ -7,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner main;
+
     [Header("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private UIManager UIManagerComponent;
@@ -20,6 +23,8 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
+    public delegate void RoundEndedHandler(int roundThatEnded);
+    public event RoundEndedHandler OnRoundEnded;
 
     private int currentWave = 1;
     private float timeSinceLastSpawn;
@@ -30,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
+        main = this;
         onEnemyDestroy.AddListener(EnemyDestroyed);
     }
 
@@ -71,7 +77,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        int index = Random.Range(0, enemyPrefabs.Length);
+        int index = UnityEngine.Random.Range(0, enemyPrefabs.Length);
         GameObject prefabToSpawn = enemyPrefabs[index];
         Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity); 
     }
@@ -104,8 +110,14 @@ public class EnemySpawner : MonoBehaviour
     {
         isSpawning = false;
         timeSinceLastSpawn = 0f;
-        currentWave++;
+        ChangeWave();
         UIManagerComponent.UpdateWave(currentWave);
+        OnRoundEnded?.Invoke(currentWave);
         StartCoroutine(StartWave());
+    }
+
+    public void ChangeWave()
+    {
+        currentWave++;
     }
 }
