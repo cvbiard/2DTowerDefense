@@ -164,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8593291516442179992}
   bulletSpeed: 15
-  bulletDamage: 2
+  bulletDamage: 4
 --- !u!114 &-3993619565453050348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,4 +177,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f28f589e490aa49965fa45081f12ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSpan: 2
+  lifeSpan: 7

@@ -175,7 +175,7 @@ MonoBehaviour:
   upgradeButton: {fileID: 0}
   targetingRange: 9
   rotationSpeed: 200
-  bps: 5
+  bps: 3
   baseUpgradeCost: 100
 --- !u!114 &-7322528798996200342
 MonoBehaviour:
