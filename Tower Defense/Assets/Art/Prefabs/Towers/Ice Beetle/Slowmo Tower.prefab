@@ -103,9 +103,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   freezeVisualBase: {fileID: 3761550083566694289}
-  targetingRange: 2
+  targetingRange: 5
   aps: 0.25
-  freezeTime: 1
+  freezeTime: 3
   freezeVisualColor: {r: 0.44716978, g: 0.81012964, b: 1, a: 0.59607846}
 --- !u!114 &6956186705907472831
 MonoBehaviour:
@@ -121,6 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   srenderer: {fileID: 258998328542459448}
   placingRange: 2
+  sellValue: 100
 --- !u!1 &568326434420606828
 GameObject:
   m_ObjectHideFlags: 0

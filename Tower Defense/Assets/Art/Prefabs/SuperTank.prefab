@@ -183,5 +183,5 @@ MonoBehaviour:
   childEnemyNum: 4
   localMovementComp: {fileID: 6061416934807812006}
   hitPoints: 10
-  currencyWorth: 100
+  currencyWorth: 500
   childMovementComp: {fileID: 0}

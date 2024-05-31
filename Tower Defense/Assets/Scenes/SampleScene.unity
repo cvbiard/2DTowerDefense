@@ -3016,7 +3016,7 @@ MonoBehaviour:
   - {fileID: 1981360542}
   - {fileID: 1209680466}
   - {fileID: 85314577}
-  currency: 500
+  currency: 1000
 --- !u!4 &780337618
 Transform:
   m_ObjectHideFlags: 0
@@ -3046,13 +3046,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  - {fileID: 7905019697883759798, guid: c27d8b371f2ce52488d31265a2fac45e, type: 3}
+  - {fileID: 7905019697883759798, guid: c27d8b371f2ce52488d31265a2fac45e, type: 3}
+  - {fileID: 7905019697883759798, guid: c27d8b371f2ce52488d31265a2fac45e, type: 3}
+  - {fileID: 7905019697883759798, guid: c27d8b371f2ce52488d31265a2fac45e, type: 3}
+  - {fileID: 7905019697883759798, guid: 1e59dfe197c62bd48963ece7f72e163e, type: 3}
+  - {fileID: 7905019697883759798, guid: 1e59dfe197c62bd48963ece7f72e163e, type: 3}
   - {fileID: 7905019697883759798, guid: 953e565a5a2944e458b7b54d6b62bc9d, type: 3}
   UIManagerComponent: {fileID: 780337621}
   Text: {fileID: 1226783148}
-  baseEnemies: 1
+  baseEnemies: 4
   enemiesPerSecond: 5
-  timeBetweenWaves: 5
-  difficultyScalingFactor: 1.5
+  timeBetweenWaves: 15
+  difficultyScalingFactor: 0.5
   enemiesPerSecondCap: 7
   maxEnemiesAtOnce: 150
 --- !u!114 &780337620

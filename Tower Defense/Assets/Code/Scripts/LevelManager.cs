@@ -10,7 +10,7 @@ public class LevelManager : MonoBehaviour
     public Transform startPoint;
     public Transform[] path;
 
-    public int currency;
+    public int currency = 500;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
-        currency = 50000;
+        //currency = 50000;
     }
 
     public void IncreaseCurrency(int amount)
