@@ -12,17 +12,18 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private float baseSpeed = 2f;
     [SerializeField] private int baseDamage = 2;
 
     //The point we want to move to
     private Transform target;
-    private int pathIndex = 0;
+    public int pathIndex = 0;
 
-    private float baseSpeed;
+    //private float baseSpeed;
 
     private void Start()
     {
-        baseSpeed = moveSpeed;
+        
         //On start make sure our target point is the first point in the array
         target = LevelManager.main.path[pathIndex];
 
@@ -71,5 +72,25 @@ public class EnemyMovement : MonoBehaviour
     public void ResetSpeed()
     {
         moveSpeed = baseSpeed;
+    }
+
+    public void SetPathIndex(int index)
+    {
+        pathIndex = index;
+        target = LevelManager.main.path[pathIndex];
+    }
+
+    public void DelayResetSpeed()
+    {
+        StartCoroutine(SpeedReset());
+    }
+
+    private IEnumerator SpeedReset()
+    {
+        yield return new WaitForSeconds(1);
+
+        Debug.Log("Resetting Speed");
+        moveSpeed = baseSpeed;
+
     }
 }

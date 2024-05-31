@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour
 
     public void Start()
     {
-        currency = 500;
+        currency = 50000;
     }
 
     public void IncreaseCurrency(int amount)

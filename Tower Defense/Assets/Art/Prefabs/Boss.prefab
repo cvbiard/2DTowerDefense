@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6285438496986522100}
   - component: {fileID: 7157738159911753683}
   m_Layer: 6
-  m_Name: Tank Enemy
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1345315623
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c266e4e4e2b881845976275ebe4b951a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fe57e80d61b53f44a9ce2725092c08a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -179,9 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901ea592cda860d40b0dfd9c4d085d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  childPrefab: {fileID: 7905019697883759798, guid: a9e18ff8fe9fb4d4999f1041444e54ce, type: 3}
+  childPrefab: {fileID: 7905019697883759798, guid: 1e59dfe197c62bd48963ece7f72e163e, type: 3}
   childEnemyNum: 4
   localMovementComp: {fileID: 6061416934807812006}
-  hitPoints: 8
+  hitPoints: 20
   currencyWorth: 100
   childMovementComp: {fileID: 0}

@@ -129,4 +129,8 @@ public class EnemySpawner : MonoBehaviour
     {
         currentWave++;
     }
+    public void IncrementAlive()
+    {
+        enemiesAlive++;
+    }
 }
