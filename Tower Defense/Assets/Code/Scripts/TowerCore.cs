@@ -11,6 +11,7 @@ public class TowerCore : MonoBehaviour
 
     [Header("Attribute")]
     [SerializeField] private float placingRange = 3f;
+    [SerializeField] private int sellValue = 100;
 
     public Sprite GetSprite()
     { 
@@ -22,5 +23,14 @@ public class TowerCore : MonoBehaviour
         return placingRange;
     }
 
+    private void OnMouseOver()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            //sell
+            LevelManager.main.IncreaseCurrency(sellValue);
+            Destroy(gameObject);
+        }
+    }
 
 }
