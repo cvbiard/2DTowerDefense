@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 //using System.Diagnostics;
 using UnityEngine;
+using TMPro;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using static System.Net.Mime.MediaTypeNames;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class EnemySpawner : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject[] enemyPrefabs;
     [SerializeField] private UIManager UIManagerComponent;
+    [SerializeField] public TextMeshProUGUI Text;
 
     [Header("Attributes")]
     [SerializeField] private int baseEnemies = 8;
@@ -20,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float timeBetweenWaves = 5f;
     [SerializeField] private float difficultyScalingFactor = 0.75f;
     [SerializeField] private float enemiesPerSecondCap = 15f;
+    [SerializeField] private float maxEnemiesAtOnce = 25f;
 
     [Header("Events")]
     public static UnityEvent onEnemyDestroy = new UnityEvent();
@@ -85,6 +89,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Text.text = enemiesAlive.ToString();
         if (!isSpawning)
         {
             return;
@@ -93,10 +98,14 @@ public class EnemySpawner : MonoBehaviour
 
         if(timeSinceLastSpawn >= (1f/eps) && enemiesLeftToSpawn > 0)
         {
-            SpawnEnemy();
-            enemiesLeftToSpawn--;
-            enemiesAlive++;
-            timeSinceLastSpawn = 0f;
+            if(enemiesAlive <= maxEnemiesAtOnce)
+            {
+                SpawnEnemy();
+                enemiesLeftToSpawn--;
+                enemiesAlive++;
+                timeSinceLastSpawn = 0f;
+            }
+            
         }
 
         if(enemiesAlive == 0 && enemiesLeftToSpawn == 0)
