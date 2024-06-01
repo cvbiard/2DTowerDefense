@@ -44,6 +44,12 @@ TagManager:
   - name: Enemy
     uniqueID: 1345315623
     locked: 0
+  - name: Targeting Range Visual
+    uniqueID: 4174262517
+    locked: 0
+  - name: Place Range Visual
+    uniqueID: 3407462877
+    locked: 0
   - name: Turrets
     uniqueID: 3545814003
     locked: 0

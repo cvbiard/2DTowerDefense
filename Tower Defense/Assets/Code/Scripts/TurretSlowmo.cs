@@ -8,9 +8,10 @@ public class TurretSlowmo : MonoBehaviour
     [Header("References")]
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject freezeVisualBase;
+    [SerializeField] private TowerCore towerCore;
 
     [Header("Attribute")]
-    [SerializeField] private float targetingRange = 5f;
+    //[SerializeField] private float targetingRange = 5f;
     [SerializeField] private float aps = 4f; //attacks Per Second
     [SerializeField] private float freezeTime = 1f;
     [SerializeField] private Color freezeVisualColor;
@@ -38,7 +39,7 @@ public class TurretSlowmo : MonoBehaviour
 
     private void FreezeEnemies()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, towerCore.GetTargetingRange(), (Vector2)transform.position, 0f, enemyMask);
 
         if (hits.Length > 0)
         {

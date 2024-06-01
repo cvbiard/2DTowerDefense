@@ -8,6 +8,7 @@ using UnityEditor;
 public class Turret : MonoBehaviour
 {
     [Header("References")]
+    [SerializeField] private TowerCore towerCore;
     [SerializeField] private Transform turretRotationPoint;
     [SerializeField] private LayerMask enemyMask;
     [SerializeField] private GameObject bulletPrefab;
@@ -18,7 +19,6 @@ public class Turret : MonoBehaviour
 
 
     [Header("Attribute")]
-    [SerializeField] private float targetingRange = 3f;
     [SerializeField] private float rotationSpeed = 5f;
     [SerializeField] private float bps = 1f; //Bullets Per Second
     [SerializeField] private int baseUpgradeCost = 100;
@@ -33,14 +33,14 @@ public class Turret : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-       // Handles.color = Color.cyan;
-       // Handles.DrawWireDisc(transform.position, transform.forward, targetingRange);
+       //Handles.color = Color.cyan;
+       //Handles.DrawWireDisc(transform.position, transform.forward, towerCore.GetTargetingRange());
     }
     // Start is called before the first frame update
     void Start()
     {
         bpsBase = bps;
-        targetingRangeBase = targetingRange;
+        targetingRangeBase = towerCore.GetTargetingRange();
 
         //upgradeButton.onClick.AddListener(Upgrade);
     }
@@ -83,7 +83,7 @@ public class Turret : MonoBehaviour
 
     private void FindTarget()
     {
-        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, targetingRange, (Vector2)transform.position, 0f, enemyMask);
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, towerCore.GetTargetingRange(), (Vector2)transform.position, 0f, enemyMask);
 
         if(hits.Length > 0)
         {
@@ -93,7 +93,7 @@ public class Turret : MonoBehaviour
 
     private bool CheckTargetIsInRange()
     {
-        return Vector2.Distance(target.position, transform.position) <= targetingRange;
+        return Vector2.Distance(target.position, transform.position) <= towerCore.GetTargetingRange();
     }
 
     public void OpenUpgradeUI()
@@ -120,12 +120,12 @@ public class Turret : MonoBehaviour
         level++;
 
         bps = CalculateBPS();
-        targetingRange = CalculateRange();
+        //targetingRange = CalculateRange();
 
         CloseUpgradeUI();
 
         Debug.Log("New BPS: " + bps);
-        Debug.Log("New range: " + targetingRange);
+        //Debug.Log("New range: " + targetingRange);
         Debug.Log("New cost: " + CalculateCost());
 
     }
