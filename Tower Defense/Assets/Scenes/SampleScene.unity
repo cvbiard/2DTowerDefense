@@ -3206,6 +3206,7 @@ MonoBehaviour:
   difficultyScalingFactor: 0.5
   enemiesPerSecondCap: 7
   maxEnemiesAtOnce: 150
+  isBetweenWaves: 1
 --- !u!114 &780337620
 MonoBehaviour:
   m_ObjectHideFlags: 0
