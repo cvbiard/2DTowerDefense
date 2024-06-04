@@ -37,6 +37,8 @@ public class EnemySpawner : MonoBehaviour
     private float eps; //enemies per second
     private bool isSpawning = false;
 
+    public bool isBetweenWaves = true;
+
     private void Awake()
     {
         main = this;
@@ -62,7 +64,10 @@ public class EnemySpawner : MonoBehaviour
   
     private IEnumerator StartWave()
     {
+        isBetweenWaves = true;
         yield return new WaitForSeconds(timeBetweenWaves);
+
+        isBetweenWaves = false;
         isSpawning = true;
         enemiesLeftToSpawn = EnemiesPerWave();
 

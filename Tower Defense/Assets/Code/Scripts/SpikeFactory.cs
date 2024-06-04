@@ -41,7 +41,7 @@ public class SpikeFactory : MonoBehaviour
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, towerCore.GetTargetingRange(), (Vector2)transform.position, 0f, pointMask);
 
-        if (hits.Length > 0)
+        if (hits.Length > 0 && EnemySpawner.main.isBetweenWaves == false)
         {
             StartCoroutine(PlaceSpike(hits, 0));
         }
