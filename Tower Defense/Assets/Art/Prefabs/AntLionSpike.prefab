@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 3092197586920935089}
   - component: {fileID: 6930816637695533585}
   - component: {fileID: 8593291516442179992}
-  - component: {fileID: -3993619565453050348}
-  - component: {fileID: -834082539597038007}
+  - component: {fileID: -2492164264769084078}
   m_Layer: 7
-  m_Name: StinkBugBullet
+  m_Name: AntLionSpike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &-3993619565453050348
+--- !u!114 &-2492164264769084078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,23 +158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4052756315766986583}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12f28f589e490aa49965fa45081f12ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeSpan: 1
---- !u!114 &-834082539597038007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4052756315766986583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5103d4e5fc55ae347b875aa5f05bfbd4, type: 3}
+  m_Script: {fileID: 11500000, guid: e0ae33fce46e7544a900d5bf423283b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8593291516442179992}
-  parentPoint: {fileID: 0}
-  bulletSpeed: 5
+  bulletSpeed: 0
   bulletDamage: 1
