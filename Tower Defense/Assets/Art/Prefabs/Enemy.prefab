@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 1345315623
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 44cd4429130a20a45ae6564238994201, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7cdca9da76a3784d9bc01997c723f43, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -129,7 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7765810915983326472}
   moveSpeed: 2
+  baseSpeed: 2
   baseDamage: 10
+  pathIndex: 0
 --- !u!58 &6285438496986522100
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,5 +179,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901ea592cda860d40b0dfd9c4d085d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  childPrefab: {fileID: 0}
+  childEnemyNum: 0
+  localMovementComp: {fileID: 0}
   hitPoints: 4
   currencyWorth: 50
+  childMovementComp: {fileID: 0}
