@@ -11,6 +11,7 @@ public class PlacerManager : MonoBehaviour
     [SerializeField] private LayerMask turretMask;
     [SerializeField] private Color canPlace;
     [SerializeField] private Color cannotPlace;
+    //[SerializeField] private GameObject groundDetector;
 
     private Vector2 mousePosition;
 

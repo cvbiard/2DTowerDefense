@@ -5,49 +5,27 @@ using UnityEngine;
 public class Plot : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Color hoverColor;
+    [SerializeField] private GameObject[] groundTypes;
 
-    private GameObject towerObject;
-    public Turret turret;
-    private Color startColor;
+    private int currentGroundType = 0;
 
-    private void Start()
+    private void OnMouseOver()
     {
-        startColor = sr.color;
-    }
-    private void OnMouseEnter()
-    {
-        sr.color = hoverColor;
-    }
-    private void OnMouseExit()
-    {
-        sr.color = startColor;
-    }
-    private void OnMouseDown()
-    {
-        if(UIManager.main.IsHoveringUI())
+        if (Input.GetMouseButtonDown(0))
         {
-            return;
+            for(int i = 0; i < groundTypes.Length; i++) 
+            {
+                groundTypes[i].SetActive(false);
+            }
+
+            Debug.Log("changing ground");
+            groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
         }
-
-        if(towerObject != null)
-        {
-            turret.OpenUpgradeUI();
-            return;
-        }
-
-        Tower towerToBuild = BuildManager.main.GetSelectedTower();
-
-        if(towerToBuild.cost > LevelManager.main.currency)
-        {
-            Debug.Log("You can't afford this tower");
-            return;
-        }
-
-       // LevelManager.main.SpendCurrency(towerToBuild.cost);
-
-       // towerObject = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
-       // turret = towerObject.GetComponent<Turret>();
     }
+
+    public int GetCurrentGround()
+    {
+        return currentGroundType;
+    }
+
 }

@@ -47,7 +47,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartWave());
+        //StartCoroutine(StartWave());
         UIManagerComponent.UpdateWave(currentWave);
     }
 
@@ -127,7 +127,7 @@ public class EnemySpawner : MonoBehaviour
         ChangeWave();
         UIManagerComponent.UpdateWave(currentWave);
         OnRoundEnded?.Invoke(currentWave);
-        StartCoroutine(StartWave());
+        
     }
 
     public void ChangeWave()
@@ -137,5 +137,10 @@ public class EnemySpawner : MonoBehaviour
     public void IncrementAlive()
     {
         enemiesAlive++;
+    }
+
+    public void BeginNextWave()
+    {
+        StartCoroutine(StartWave());
     }
 }

@@ -11,10 +11,12 @@ public class TowerCore : MonoBehaviour
     [SerializeField] private GameObject towerRangeVisual;
 
 
+
     [Header("Attribute")]
     [SerializeField] private float placingRange = 3f;
     [SerializeField] private int sellValue = 100;
     [SerializeField] private float targetingRange = 3f;
+    [SerializeField] public int requiredGroundID = 0;
 
 
     private void Start()
