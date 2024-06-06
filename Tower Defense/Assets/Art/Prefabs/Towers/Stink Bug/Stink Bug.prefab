@@ -826,6 +826,7 @@ MonoBehaviour:
   placingRange: 2
   sellValue: 100
   targetingRange: 5
+  requiredGroundID: 2
 --- !u!50 &8621173738452826003
 Rigidbody2D:
   serializedVersion: 4

@@ -126,6 +126,7 @@ MonoBehaviour:
   placingRange: 2
   sellValue: 100
   targetingRange: 5
+  requiredGroundID: 2
 --- !u!58 &4574559017549535077
 CircleCollider2D:
   m_ObjectHideFlags: 0

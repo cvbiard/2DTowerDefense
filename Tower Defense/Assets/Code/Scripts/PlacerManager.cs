@@ -11,7 +11,7 @@ public class PlacerManager : MonoBehaviour
     [SerializeField] private LayerMask turretMask;
     [SerializeField] private Color canPlace;
     [SerializeField] private Color cannotPlace;
-    //[SerializeField] private GameObject groundDetector;
+    [SerializeField] private GameObject groundDetector;
 
     private Vector2 mousePosition;
 
@@ -36,9 +36,14 @@ public class PlacerManager : MonoBehaviour
             transform.position = mousePosition;
 
        
-        if(FindOtherTurrets() == false)
+        if(FindOtherTurrets() == true || groundDetector.GetComponent<GroundDetector>().GetCanPlace() == false)
         {
+            towerPlaceRadius.GetComponent<SpriteRenderer>().color = cannotPlace;
             return;
+        }
+        else
+        {
+            towerPlaceRadius.GetComponent<SpriteRenderer>().color = canPlace;
         }
 
         
@@ -53,11 +58,15 @@ public class PlacerManager : MonoBehaviour
                 return;
             }
 
-            LevelManager.main.SpendCurrency(towerToBuild.cost);
+            if(groundDetector.GetComponent<GroundDetector>().GetCanPlace())
+            {
+                LevelManager.main.SpendCurrency(towerToBuild.cost);
 
-           towerObject = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
-           //turret = towerObject.GetComponent<Turret>();
-           Destroy(gameObject);
+                towerObject = Instantiate(towerToBuild.prefab, transform.position, Quaternion.identity);
+                //turret = towerObject.GetComponent<Turret>();
+                Destroy(gameObject);
+            }
+            
         }
 
 
@@ -70,14 +79,14 @@ public class PlacerManager : MonoBehaviour
 
         if (hits.Length > 0)
         {
-            Debug.Log("overlapping anoter turret");
-            towerPlaceRadius.GetComponent<SpriteRenderer>().color = cannotPlace;
-            return false;
+            //Debug.Log("overlapping anoter turret");
+            
+            return true;
         }
         else
         {
-            towerPlaceRadius.GetComponent<SpriteRenderer>().color = canPlace;
-            return true;
+            
+            return false;
         }
     }
 }

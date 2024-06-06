@@ -20,6 +20,7 @@ public class Plot : MonoBehaviour
 
             Debug.Log("changing ground");
             groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
+            currentGroundType = ToolManager.main.GetCurrentTool();
         }
     }
 

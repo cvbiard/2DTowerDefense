@@ -16,7 +16,7 @@ public class TowerCore : MonoBehaviour
     [SerializeField] private float placingRange = 3f;
     [SerializeField] private int sellValue = 100;
     [SerializeField] private float targetingRange = 3f;
-    [SerializeField] public int requiredGroundID = 0;
+    [SerializeField] private int requiredGroundID = 0;
 
 
     private void Start()
@@ -67,6 +67,11 @@ public class TowerCore : MonoBehaviour
         {
             towerRangeVisual.SetActive(false);
         }
+    }
+
+    public int GetRequiredGround()
+    {
+        return requiredGroundID;
     }
 
 }
