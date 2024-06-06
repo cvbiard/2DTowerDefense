@@ -392,6 +392,7 @@ MonoBehaviour:
   placingRange: 2
   sellValue: 100
   targetingRange: 3
+  requiredGroundID: 0
 --- !u!50 &8621173738452826003
 Rigidbody2D:
   serializedVersion: 4
@@ -469,6 +470,5 @@ MonoBehaviour:
   Seed: {fileID: 5136414265495951409}
   Sprout: {fileID: 939115839056006214}
   Flower: {fileID: 3785597705601006845}
-  placingRange: 3
-  sellValue: 100
-  turnsToGrow: 3
+  maxWaterLevel: 4
+  reqWaterToGrow: 2
