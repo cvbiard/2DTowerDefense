@@ -12,9 +12,9 @@ public class FlowerCore : MonoBehaviour
 
 
     [Header("Attribute")]
-    [SerializeField] private float placingRange = 3f;
-    [SerializeField] private int sellValue = 100;
-    [SerializeField] private int turnsToGrow = 3;
+    //[SerializeField] private float placingRange = 3f;
+    //[SerializeField] private int sellValue = 100;
+    //[SerializeField] private int turnsToGrow = 3;
     //[SerializeField] private float targetingRange = 3f;
 
     private int turnsAlive = 0;

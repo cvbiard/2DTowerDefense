@@ -8,6 +8,10 @@ public class Plot : MonoBehaviour
     [SerializeField] private GameObject[] groundTypes;
     [SerializeField] private LayerMask turretMask;
 
+    [Header("Attribute")]
+    [SerializeField] private int changeGroundCost = 10;
+
+
 
 
     private int currentGroundType = 0;
@@ -20,7 +24,13 @@ public class Plot : MonoBehaviour
             
             if(hits.Length < 1)
             {
-                for (int i = 0; i < groundTypes.Length; i++)
+                if (changeGroundCost > LevelManager.main.currency)
+                {
+                    Debug.Log("You can't afford this tower");
+                    return;
+                }
+
+                    for (int i = 0; i < groundTypes.Length; i++)
                 {
                     groundTypes[i].SetActive(false);
                 }
@@ -28,6 +38,8 @@ public class Plot : MonoBehaviour
                 Debug.Log("changing ground");
                 groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
                 currentGroundType = ToolManager.main.GetCurrentTool();
+                LevelManager.main.SpendCurrency(changeGroundCost);
+
             }
             
         }
