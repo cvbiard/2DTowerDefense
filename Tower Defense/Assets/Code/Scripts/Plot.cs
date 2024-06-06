@@ -22,7 +22,7 @@ public class Plot : MonoBehaviour
         {
             RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1f, (Vector2)transform.position, 0f, turretMask);
             
-            if(hits.Length < 1)
+            if(hits.Length < 1 && ToolManager.main.GetCurrentTool() != 4)
             {
                 if (changeGroundCost > LevelManager.main.currency)
                 {

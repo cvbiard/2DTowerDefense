@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: -1328303420250653560}
   - component: {fileID: 8621173738452826003}
   - component: {fileID: -7769727983030055059}
+  - component: {fileID: -808101137858958069}
   m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
@@ -655,6 +656,7 @@ MonoBehaviour:
   placingRange: 2
   sellValue: 100
   targetingRange: 3
+  requiredGroundID: 0
 --- !u!50 &8621173738452826003
 Rigidbody2D:
   serializedVersion: 4
@@ -717,6 +719,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-808101137858958069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7252256592444686723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45dae15ddd9be6742934b3d407f2f8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7961154606254189121
 GameObject:
   m_ObjectHideFlags: 0
