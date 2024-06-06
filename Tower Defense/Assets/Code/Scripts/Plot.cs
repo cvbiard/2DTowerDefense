@@ -6,6 +6,9 @@ public class Plot : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject[] groundTypes;
+    [SerializeField] private LayerMask turretMask;
+
+
 
     private int currentGroundType = 0;
 
@@ -13,14 +16,20 @@ public class Plot : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            for(int i = 0; i < groundTypes.Length; i++) 
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 1f, (Vector2)transform.position, 0f, turretMask);
+            
+            if(hits.Length < 1)
             {
-                groundTypes[i].SetActive(false);
-            }
+                for (int i = 0; i < groundTypes.Length; i++)
+                {
+                    groundTypes[i].SetActive(false);
+                }
 
-            Debug.Log("changing ground");
-            groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
-            currentGroundType = ToolManager.main.GetCurrentTool();
+                Debug.Log("changing ground");
+                groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
+                currentGroundType = ToolManager.main.GetCurrentTool();
+            }
+            
         }
     }
 
