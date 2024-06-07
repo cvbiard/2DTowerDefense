@@ -5,7 +5,8 @@ using UnityEngine;
 public class Plot : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject[] groundTypes;
+    [SerializeField] private Sprite[] groundTypeSprites;
+    [SerializeField] private SpriteRenderer sr;
     [SerializeField] private LayerMask turretMask;
 
     [Header("Attribute")]
@@ -30,13 +31,10 @@ public class Plot : MonoBehaviour
                     return;
                 }
 
-                    for (int i = 0; i < groundTypes.Length; i++)
-                {
-                    groundTypes[i].SetActive(false);
-                }
 
                 Debug.Log("changing ground");
-                groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
+                //groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
+                sr.sprite = groundTypeSprites[ToolManager.main.GetCurrentTool()];
                 currentGroundType = ToolManager.main.GetCurrentTool();
                 LevelManager.main.SpendCurrency(changeGroundCost);
 

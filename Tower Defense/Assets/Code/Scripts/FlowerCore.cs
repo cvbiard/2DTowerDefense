@@ -6,8 +6,6 @@ public class FlowerCore : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private GameObject Seed;
-    [SerializeField] private GameObject Sprout;
-    [SerializeField] private GameObject Flower;
 
 
 
@@ -42,24 +40,6 @@ public class FlowerCore : MonoBehaviour
     {
         if(currentWaterLevel >= reqWaterToGrow)
         {
-            switch (turnsAlive)
-            {
-                case 0:
-                    Seed.SetActive(true);
-                    Sprout.SetActive(false);
-                    Flower.SetActive(false);
-                    break;
-                case 1:
-                    Seed.SetActive(false);
-                    Sprout.SetActive(true);
-                    Flower.SetActive(false);
-                    break;
-                case 2:
-                    Seed.SetActive(false);
-                    Sprout.SetActive(false);
-                    Flower.SetActive(true);
-                    break;
-            }
             currentWaterLevel--;
             return;
         }

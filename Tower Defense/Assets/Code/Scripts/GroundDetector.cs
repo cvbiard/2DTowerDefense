@@ -20,12 +20,12 @@ public class GroundDetector : MonoBehaviour
         {
             if (other.gameObject.GetComponent<Plot>().GetCurrentGround() == towerPrefab.GetComponent<TowerCore>().GetRequiredGround())
             {
-                Debug.Log("dirt under me");
+                //Debug.Log("dirt under me");
                 canPlace = true;
             }
             else
             {
-                Debug.Log(" no dirt under me");
+                //Debug.Log(" no dirt under me");
                 canPlace = false;
             }
 
