@@ -5,7 +5,8 @@ using UnityEngine;
 public class FlowerCore : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private GameObject Seed;
+    [SerializeField] private Sprite[] growthSprites;
+    [SerializeField] private SpriteRenderer sr;
 
 
 
@@ -19,6 +20,7 @@ public class FlowerCore : MonoBehaviour
 
     private int turnsAlive = 0;
     private int currentWaterLevel = 0;
+    private int currentGrowthLevel = 0;
 
     void OnEnable()
     {
@@ -40,7 +42,13 @@ public class FlowerCore : MonoBehaviour
     {
         if(currentWaterLevel >= reqWaterToGrow)
         {
-            currentWaterLevel--;
+            if(currentGrowthLevel < growthSprites.Length)
+            {
+                currentGrowthLevel++;
+                sr.sprite = growthSprites[currentGrowthLevel];
+                currentWaterLevel--;
+            }
+            
             return;
         }
         Debug.Log("Not watered enough to grow");

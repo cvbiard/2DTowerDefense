@@ -44,7 +44,7 @@ public class TowerCore : MonoBehaviour
             int tempCover = 0;
             circleOverlapCurrentFrame = 0;
 
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, targetingRange, boostMask);
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f, boostMask);
 
             for(int i = 0; i<hits.Length; i++)
             {
