@@ -69,7 +69,7 @@ public class StinkBug : MonoBehaviour
 
             timeUntilFire += Time.deltaTime;
 
-            if (timeUntilFire >= 1f / bps)
+            if (timeUntilFire >= 1f / (bps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti())))
             {
                 Shoot();
                 timeUntilFire = 0f;
@@ -80,31 +80,14 @@ public class StinkBug : MonoBehaviour
 
     private void Shoot()
     {
-        //GameObject bulletObj = Instantiate(bulletPrefab, firingPointN.position, Quaternion.identity);
-        //StinkBugBullet bulletScript = bulletObj.GetComponent<StinkBugBullet>();
-        //bulletScript.SetDirection(Vector2.up);
-
-        //bulletObj = Instantiate(bulletPrefab, firingPointS.position, Quaternion.identity);
-        //bulletScript = bulletObj.GetComponent<StinkBugBullet>();
-        //bulletScript.SetDirection(Vector2.down);
-
-        //bulletObj = Instantiate(bulletPrefab, firingPointE.position, Quaternion.identity);
-        //bulletScript = bulletObj.GetComponent<StinkBugBullet>();
-        //bulletScript.SetDirection(Vector2.right);
-
-        //bulletObj = Instantiate(bulletPrefab, firingPointW.position, Quaternion.identity);
-        //bulletScript = bulletObj.GetComponent<StinkBugBullet>();
-        //bulletScript.SetDirection(Vector2.left);
-
-        //bulletObj = Instantiate(bulletPrefab, firingPointNE.position, Quaternion.identity);
-        //bulletScript = bulletObj.GetComponent<StinkBugBullet>();
-        //bulletScript.SetDirection(firingPointNE.localPosition);
+     
 
         for(int i = 0; i < firingPoints.Length; i++)
         {
             GameObject bulletObj = Instantiate(bulletPrefab, firingPoints[i].position, Quaternion.identity);
             StinkBugBullet bulletScript = bulletObj.GetComponent<StinkBugBullet>();
             bulletScript.SetDirection(firingPoints[i].localPosition);
+            bulletScript.MultiplyDamage(towerCore.GetWaterNear() * towerCore.GetWaterMulti());
         }
         //bulletScript.SetTarget(target);
     }

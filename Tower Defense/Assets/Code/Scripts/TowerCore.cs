@@ -42,45 +42,49 @@ public class TowerCore : MonoBehaviour
     }
     private void Update()
     {
-        if(circleOverlapCurrentFrame == circleOverlapFrame)
+        if(towerID >-1)
         {
-            int tempFood = 0;
-            int tempWater = 0;
-            int tempCover = 0;
-            circleOverlapCurrentFrame = 0;
-
-            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f, boostMask);
-
-            for(int i = 0; i<hits.Length; i++)
+            if (circleOverlapCurrentFrame == circleOverlapFrame)
             {
-                if (hits[i].gameObject.GetComponent<BoostManager>().foodFor[towerID] == true)
-                {
-                    tempFood++;
-                }
-                if (hits[i].gameObject.GetComponent<BoostManager>().waterFor[towerID] == true)
-                {
-                    tempWater++;
-                }
-                if (hits[i].gameObject.GetComponent<BoostManager>().coverFor[towerID] == true)
-                {
-                    tempCover++;
-                }
-            }
+                int tempFood = 0;
+                int tempWater = 0;
+                int tempCover = 0;
+                circleOverlapCurrentFrame = 0;
 
-            if(coverNear != tempCover)
+                Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f, boostMask);
+
+                for (int i = 0; i < hits.Length; i++)
+                {
+                    if (hits[i].gameObject.GetComponent<BoostManager>().foodFor[towerID] == true)
+                    {
+                        tempFood++;
+                    }
+                    if (hits[i].gameObject.GetComponent<BoostManager>().waterFor[towerID] == true)
+                    {
+                        tempWater++;
+                    }
+                    if (hits[i].gameObject.GetComponent<BoostManager>().coverFor[towerID] == true)
+                    {
+                        tempCover++;
+                    }
+                }
+
+                if (coverNear != tempCover)
+                {
+                    UpdateTargetingRange(tempCover * coverMulti);
+                }
+                foodNear = tempFood;
+                waterNear = tempWater;
+                coverNear = tempCover;
+
+
+            }
+            else
             {
-                UpdateTargetingRange(tempCover * coverMulti);
+                circleOverlapCurrentFrame++;
             }
-            foodNear = tempFood;
-            waterNear = tempWater;
-            coverNear = tempCover;
-
-            
         }
-        else
-        {
-            circleOverlapCurrentFrame++;
-        }
+        
     }
     public Sprite GetSprite()
     { 

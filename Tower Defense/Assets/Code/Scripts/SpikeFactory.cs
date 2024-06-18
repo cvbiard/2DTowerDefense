@@ -28,7 +28,7 @@ public class SpikeFactory : MonoBehaviour
 
         timeUntilFire += Time.deltaTime;
 
-        if (timeUntilFire >= 1f / aps)
+        if (timeUntilFire >= 1f / aps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti()))
         {
             LaySpikes();
             timeUntilFire = 0f;
@@ -58,7 +58,7 @@ public class SpikeFactory : MonoBehaviour
 
             Point targetPoint = hit.transform.GetComponent<Point>();
 
-            targetPoint.EnableSpike();
+            targetPoint.EnableSpike(towerCore.GetWaterNear() * towerCore.GetWaterMulti());
 
             StartCoroutine(PlaceSpike(targets, index+1));
         }

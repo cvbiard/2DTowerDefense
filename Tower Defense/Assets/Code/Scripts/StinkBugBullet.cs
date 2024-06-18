@@ -10,14 +10,19 @@ public class StinkBugBullet: MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 0f;
-    [SerializeField] private int bulletDamage = 1;
+    [SerializeField] private float bulletDamage = 1;
 
     private Vector2 direction;
 
     public void SetDirection(Vector2 _direction) 
     { 
         direction = _direction; 
-    }    
+    }
+
+    public void MultiplyDamage(float multiplier)
+    {
+        bulletDamage = bulletDamage * multiplier;
+    }
 
     private void FixedUpdate()
     {

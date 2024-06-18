@@ -335,11 +335,15 @@ MonoBehaviour:
   boostMask:
     serializedVersion: 2
     m_Bits: 1024
-  towerID: 0
+  towerID: -1
   placingRange: 2
   sellValue: 100
+  targetingRangeBase: 3
   targetingRange: 3
   requiredGroundID: 0
+  foodMulti: 1.2
+  waterMulti: 1.2
+  coverMulti: 1.2
 --- !u!50 &8621173738452826003
 Rigidbody2D:
   serializedVersion: 4
@@ -414,7 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a83c1692aa1744aa8c6914234a4baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Seed: {fileID: 0}
   growthSprites:
   - {fileID: 21300000, guid: 074bb7972d049e047b724c1488e3e1b9, type: 3}
   - {fileID: 21300000, guid: 92756fe80ce48d845a89694ab2bc956f, type: 3}

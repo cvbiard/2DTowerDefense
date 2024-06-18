@@ -12,13 +12,14 @@ public class Point : MonoBehaviour
     [Header("Attribute")]
     [SerializeField] private bool hasSpike = false;
 
-    public void EnableSpike()
+    public void EnableSpike(float multiplier)
     {
         if(hasSpike == false)
         {
             hasSpike = true;
             GameObject spikeObj = Instantiate(spikePrefab, transform.position, Quaternion.identity);
             spikeObj.GetComponent<Spike>().SetParentPoint(this);
+            spikeObj.GetComponent<Spike>().MultiplyDamage(multiplier);
         }
 
     }

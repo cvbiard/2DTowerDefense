@@ -102,10 +102,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   srenderer: {fileID: 258998328542459448}
   towerRangeVisual: {fileID: 278539360980799562}
+  boostManager: {fileID: 0}
+  boostMask:
+    serializedVersion: 2
+    m_Bits: 1024
+  towerID: 0
   placingRange: 2
   sellValue: 100
+  targetingRangeBase: 3
   targetingRange: 5
   requiredGroundID: 1
+  foodMulti: 1.2
+  waterMulti: 1.2
+  coverMulti: 1.2
 --- !u!58 &4574559017549535077
 CircleCollider2D:
   m_ObjectHideFlags: 0

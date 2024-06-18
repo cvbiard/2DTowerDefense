@@ -28,7 +28,7 @@ public class TurretSlowmo : MonoBehaviour
 
         timeUntilFire += Time.deltaTime;
 
-        if (timeUntilFire >= 1f / aps)
+        if (timeUntilFire >= 1f * (aps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti())))
         {
             FreezeEnemies();
             timeUntilFire = 0f;
@@ -59,7 +59,7 @@ public class TurretSlowmo : MonoBehaviour
 
     private IEnumerator ResetEnemySpeed(EnemyMovement em)
     {
-        yield return new WaitForSeconds(freezeTime);
+        yield return new WaitForSeconds(freezeTime * (towerCore.GetFoodNear() * towerCore.GetFoodMulti()));
 
         em.ResetSpeed();
         freezeVisualBase.SetActive(false);
