@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Diagnostics;
 using UnityEngine;
 
 public class Plot : MonoBehaviour
@@ -31,12 +32,15 @@ public class Plot : MonoBehaviour
                     return;
                 }
 
-
-                Debug.Log("changing ground");
-                //groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
-                sr.sprite = groundTypeSprites[ToolManager.main.GetCurrentTool()];
-                currentGroundType = ToolManager.main.GetCurrentTool();
-                LevelManager.main.SpendCurrency(changeGroundCost);
+                if(currentGroundType != ToolManager.main.GetCurrentTool())
+                {
+                    Debug.Log("changing ground");
+                    //groundTypes[ToolManager.main.GetCurrentTool()].SetActive(true);
+                    sr.sprite = groundTypeSprites[ToolManager.main.GetCurrentTool()];
+                    currentGroundType = ToolManager.main.GetCurrentTool();
+                    LevelManager.main.SpendCurrency(changeGroundCost);
+                }
+               
 
             }
             

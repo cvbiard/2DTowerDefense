@@ -827,7 +827,7 @@ MonoBehaviour:
   boostMask:
     serializedVersion: 2
     m_Bits: 1024
-  towerID: 0
+  towerID: 3
   placingRange: 2
   sellValue: 100
   targetingRangeBase: 3

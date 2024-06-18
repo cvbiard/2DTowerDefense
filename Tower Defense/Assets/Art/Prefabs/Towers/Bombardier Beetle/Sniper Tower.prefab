@@ -652,10 +652,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   srenderer: {fileID: 3306291816003926057}
   towerRangeVisual: {fileID: 47871522737565975}
+  boostManager: {fileID: 0}
+  boostMask:
+    serializedVersion: 2
+    m_Bits: 0
+  towerID: 2
   placingRange: 2
   sellValue: 100
+  targetingRangeBase: 3
   targetingRange: 30
   requiredGroundID: 3
+  foodMulti: 1.2
+  waterMulti: 1.2
+  coverMulti: 1.2
 --- !u!50 &8621173738452826003
 Rigidbody2D:
   serializedVersion: 4
