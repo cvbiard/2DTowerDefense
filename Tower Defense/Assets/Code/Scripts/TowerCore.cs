@@ -16,8 +16,13 @@ public class TowerCore : MonoBehaviour
     [SerializeField] private int towerID = 0;
     [SerializeField] private float placingRange = 3f;
     [SerializeField] private int sellValue = 100;
+    [SerializeField] private float targetingRangeBase = 3f;
     [SerializeField] private float targetingRange = 3f;
     [SerializeField] private int requiredGroundID = 0;
+
+    [SerializeField] private float foodMulti = 1.2f;
+    [SerializeField] private float waterMulti = 1.2f;
+    [SerializeField] private float coverMulti = 1.2f;
 
     private int foodNear = 0;
     private int waterNear = 0;
@@ -61,9 +66,16 @@ public class TowerCore : MonoBehaviour
                     tempCover++;
                 }
             }
+
+            if(coverNear != tempCover)
+            {
+                UpdateTargetingRange(tempCover * coverMulti);
+            }
             foodNear = tempFood;
             waterNear = tempWater;
             coverNear = tempCover;
+
+            
         }
         else
         {
@@ -143,6 +155,7 @@ public class TowerCore : MonoBehaviour
     public void IncCoverNear()
     {
         coverNear++;
+        UpdateTargetingRange(coverNear * coverMulti);
     }
     public void DecFoodNear()
     {
@@ -156,6 +169,7 @@ public class TowerCore : MonoBehaviour
     public void DecCoverNear()
     {
         coverNear--;
+        UpdateTargetingRange(coverNear * coverMulti);
     }
 
     public int GetTowerID()
@@ -166,5 +180,28 @@ public class TowerCore : MonoBehaviour
     public int GetSellValue()
     {
         return sellValue;
+    }
+
+    public float GetFoodMulti()
+    {
+        return foodMulti;
+    }
+
+    public float GetWaterMulti()
+    {
+        return waterMulti;
+    }
+    public float GetCoverMulti()
+    {
+        return coverMulti;
+    }
+
+    public void UpdateTargetingRange(float multiplier)
+    {
+        Debug.Log("updating targeting range");
+        targetingRange = targetingRangeBase;
+        targetingRange = targetingRange * multiplier;
+        towerRangeVisual.transform.localScale = new Vector2(targetingRange * 2, targetingRange * 2);
+        //towerRangeVisual.transform.localScale = new Vector2((targetingRange*multiplier) * 2, (targetingRange * multiplier) * 2);
     }
 }

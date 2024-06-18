@@ -9,13 +9,18 @@ public class Bullet : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] private float bulletSpeed = 5f;
-    [SerializeField] private int bulletDamage = 1;
+    [SerializeField] private float bulletDamage = 1;
 
     private Transform target;
 
     public void SetTarget(Transform _target)
     {
         target = _target;   
+    }
+
+    public void MultiplyDamage(float multiplier)
+    {
+        bulletDamage = bulletDamage * multiplier;
     }
 
     private void FixedUpdate()
@@ -32,6 +37,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other)
     {
         other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+        Debug.Log("Dealing " + bulletDamage + " Damage");
         Destroy(gameObject);
     }
 

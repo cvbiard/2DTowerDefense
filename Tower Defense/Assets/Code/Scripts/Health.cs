@@ -12,7 +12,7 @@ public class Health : MonoBehaviour
 
 
     [Header("Attributes")]
-    [SerializeField] private int hitPoints = 2;
+    [SerializeField] private float hitPoints = 2f;
     [SerializeField] private int currencyWorth = 50;
     
     private GameObject childObj;
@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
     private bool isDestroyed = false;
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage(float dmg)
     {
         hitPoints -= dmg;
 

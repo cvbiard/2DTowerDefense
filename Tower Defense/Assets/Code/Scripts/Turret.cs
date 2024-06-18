@@ -23,6 +23,8 @@ public class Turret : MonoBehaviour
     [SerializeField] private float bps = 1f; //Bullets Per Second
     [SerializeField] private int baseUpgradeCost = 100;
 
+    
+
     private float bpsBase;
     private float targetingRangeBase;
 
@@ -30,6 +32,11 @@ public class Turret : MonoBehaviour
     private float timeUntilFire;
 
     private int level = 1;
+
+
+    private int foodLevel = 0;
+    private int waterLevel = 0;
+    private int coverLevel = 0;
 
     private void OnDrawGizmosSelected()
     {
@@ -48,6 +55,11 @@ public class Turret : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        foodLevel = towerCore.GetFoodNear();
+        waterLevel = towerCore.GetWaterNear();
+        coverLevel = towerCore.GetCoverNear();
+        
+
         if(target == null)
         {
             FindTarget();
@@ -65,8 +77,9 @@ public class Turret : MonoBehaviour
             
             timeUntilFire += Time.deltaTime;
             
-            if(timeUntilFire >= 1f/bps)
+            if(timeUntilFire >= 1f/(bps *(foodLevel*towerCore.GetFoodMulti())))
             {
+                Debug.Log(1f / (bps * (foodLevel * towerCore.GetFoodMulti())));
                 Shoot();
                 timeUntilFire = 0f;
             }
@@ -79,6 +92,7 @@ public class Turret : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
+        bulletScript.MultiplyDamage(waterLevel * towerCore.GetWaterMulti());
     }
 
     private void FindTarget()
