@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
-//using System.Diagnostics;
 
 public class Turret : MonoBehaviour
 {
@@ -72,12 +71,25 @@ public class Turret : MonoBehaviour
             
             timeUntilFire += Time.deltaTime;
             
-            if(timeUntilFire >= 1f/(bps *(towerCore.GetFoodNear()*towerCore.GetFoodMulti())))
+            if(towerCore.GetFoodNear()>0)
             {
-                Debug.Log(1f / (bps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti())));
-                Shoot();
-                timeUntilFire = 0f;
+                if (timeUntilFire >= 1f / (bps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti())))
+                {
+                    //Debug.Log(1f / (bps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti())));
+                    Shoot();
+                    timeUntilFire = 0f;
+                }
             }
+            else
+            {
+                if (timeUntilFire >= 1f / bps)
+                {
+                    //Debug.Log(1f / (bps * (towerCore.GetFoodNear() * towerCore.GetFoodMulti())));
+                    Shoot();
+                    timeUntilFire = 0f;
+                }
+            }
+            
         }
         
     }
@@ -87,7 +99,11 @@ public class Turret : MonoBehaviour
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);
-        bulletScript.MultiplyDamage(towerCore.GetWaterNear() * towerCore.GetWaterMulti());
+
+        if (towerCore.GetWaterNear() > 0)
+        {
+            bulletScript.MultiplyDamage(towerCore.GetWaterNear() * towerCore.GetWaterMulti());
+        }
     }
 
     private void FindTarget()

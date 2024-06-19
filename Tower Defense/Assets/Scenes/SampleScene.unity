@@ -15405,10 +15405,10 @@ MonoBehaviour:
   - {fileID: 7905019697883759798, guid: 953e565a5a2944e458b7b54d6b62bc9d, type: 3}
   UIManagerComponent: {fileID: 780337621}
   Text: {fileID: 1226783148}
-  baseEnemies: 4
-  enemiesPerSecond: 5
+  baseEnemies: 2
+  enemiesPerSecond: 2
   timeBetweenWaves: 2
-  difficultyScalingFactor: 0.5
+  difficultyScalingFactor: 0.25
   enemiesPerSecondCap: 7
   maxEnemiesAtOnce: 150
   isBetweenWaves: 1
@@ -46655,7 +46655,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1800, y: 0}
+  m_AnchoredPosition: {x: 1800, y: -148.97}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2085672729

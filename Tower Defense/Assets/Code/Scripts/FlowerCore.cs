@@ -7,12 +7,14 @@ public class FlowerCore : MonoBehaviour
     [Header("References")]
     [SerializeField] private Sprite[] growthSprites;
     [SerializeField] private SpriteRenderer sr;
-
+    [SerializeField] private BoostManager boostManager;
 
 
     [Header("Attribute")]
     [SerializeField] private int maxWaterLevel = 0;
     [SerializeField] private int reqWaterToGrow = 0;
+    [SerializeField] private int growthLevelBoost = 0;
+    [SerializeField] private int waterLevelBoost = 0;
     //[SerializeField] private float placingRange = 3f;
     //[SerializeField] private int sellValue = 100;
     //[SerializeField] private int turnsToGrow = 3;
@@ -21,6 +23,18 @@ public class FlowerCore : MonoBehaviour
     private int turnsAlive = 0;
     private int currentWaterLevel = 0;
     private int currentGrowthLevel = 0;
+
+    private void Update()
+    {
+        if (growthLevelBoost <= currentGrowthLevel)
+        {
+            boostManager.SetCanBoost(true);
+        }
+        else
+        {
+            boostManager.SetCanBoost(false);
+        }
+    }
 
     void OnEnable()
     {
@@ -52,6 +66,7 @@ public class FlowerCore : MonoBehaviour
             return;
         }
         Debug.Log("Not watered enough to grow");
+        
         
     }
     private void OnMouseOver()

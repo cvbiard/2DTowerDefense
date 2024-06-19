@@ -55,15 +55,15 @@ public class TowerCore : MonoBehaviour
 
                 for (int i = 0; i < hits.Length; i++)
                 {
-                    if (hits[i].gameObject.GetComponent<BoostManager>().foodFor[towerID] == true)
+                    if (hits[i].gameObject.GetComponent<BoostManager>().foodFor[towerID] == true && hits[i].gameObject.GetComponent<BoostManager>().GetCanBoost() == true)
                     {
                         tempFood++;
                     }
-                    if (hits[i].gameObject.GetComponent<BoostManager>().waterFor[towerID] == true)
+                    if (hits[i].gameObject.GetComponent<BoostManager>().waterFor[towerID] == true && hits[i].gameObject.GetComponent<BoostManager>().GetCanBoost() == true)
                     {
                         tempWater++;
                     }
-                    if (hits[i].gameObject.GetComponent<BoostManager>().coverFor[towerID] == true)
+                    if (hits[i].gameObject.GetComponent<BoostManager>().coverFor[towerID] == true && hits[i].gameObject.GetComponent<BoostManager>().GetCanBoost() == true)
                     {
                         tempCover++;
                     }

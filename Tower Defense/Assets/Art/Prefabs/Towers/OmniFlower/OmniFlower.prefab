@@ -133,6 +133,9 @@ MonoBehaviour:
   foodFor: 0101010101
   waterFor: 0101010101
   coverFor: 0101010101
+  currentFoodFor: 0000000000
+  currentWaterFor: 0000000000
+  currentCoverFor: 0000000000
 --- !u!50 &4857449939936532716
 Rigidbody2D:
   serializedVersion: 4
@@ -331,7 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   srenderer: {fileID: 6194795822401202279}
   towerRangeVisual: {fileID: 904267931307847144}
-  boostManager: {fileID: 0}
+  boostManager: {fileID: 5414173562119252343}
   boostMask:
     serializedVersion: 2
     m_Bits: 1024
@@ -423,5 +426,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 92756fe80ce48d845a89694ab2bc956f, type: 3}
   - {fileID: 21300000, guid: e3dcb027dcf81b34986561dc56e6f244, type: 3}
   sr: {fileID: 6194795822401202279}
+  boostManager: {fileID: 5414173562119252343}
   maxWaterLevel: 4
   reqWaterToGrow: 2
+  growthLevelBoost: 0
+  waterLevelBoost: 0
