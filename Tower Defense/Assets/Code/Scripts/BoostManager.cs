@@ -9,5 +9,10 @@ public class BoostManager : MonoBehaviour
     [SerializeField] public bool[] waterFor;
     [SerializeField] public bool[] coverFor;
 
-    
+    [SerializeField] public bool[] currentFoodFor;
+    [SerializeField] public bool[] currentWaterFor;
+    [SerializeField] public bool[] currentCoverFor;
+
+    [SerializeField] private FlowerCore flowerCore;
+
 }
